@@ -1,0 +1,136 @@
+@CHARSET "UTF-8";
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			font-size: 12px;
+			font-family: "微软雅黑";
+			color: #666;
+		}
+		
+		/*顶部栏的样式*/
+		.navigation{
+			font-size:16px;
+			padding: 12px;
+		}
+		.navigation-right{
+			float: right;
+			/*line-height: 85px;*/
+			font-size: 16px;
+			/*padding: 3px;*/
+			font-weight:500;
+		}
+		
+		.wh{
+			width:80%;
+			height:50px;
+			align:center;
+			margin:0 auto;
+		}
+		
+		.classifier {
+			font-size: 16px;
+			font-weight: 50px;
+			/*text-align: center;*/
+			margin: 0 0 0 11px;
+		}
+/*=====================================================*/
+		
+		/* 中部样式 */
+		.banner {
+			width:100%;
+			height:380px;
+			background: url("../images/background.jpg");
+		}
+		
+		.logotxt {
+			font-weight: 700;
+			color: #fff;
+			font-size: 64px;
+			margin: 0 0 0 300px;
+			padding: 110px;
+		}
+
+		/*.banner {
+		    height: 100%;
+		    width: 100%;
+		    display: block;
+		    z-index: 1;
+		}*/
+
+/*=====================================================*/
+/*展示商品样式*/
+.products_image{
+			width : 210px;
+			height : 220px;
+		}
+		
+		.thumbnail{
+			margin: 10px 0px 0px 0px;
+		}
+		.shop{
+			width: 1156px;/*1100px;*/
+			height: 1000px;
+			border: 1px solid green; /*red*/
+			margin: 30px auto;
+		}
+		li{
+			border: 1px solid white; /*red*/
+			list-style-type: none;
+			width: 220px;
+			/*height: 400px;*/
+			float: left;
+			margin:5px;
+			padding: 5px;
+			/*display: inline;*/
+		}
+		/* 当鼠标悬停在<li>元素内时,图片有一个红色边框 */
+		.li-hover:hover{
+  	  		border:1px red solid;
+  	  	}
+  	  	/*.products_image:hover{
+  	  		border:2px solid red;
+  	  	}*/
+  	  	.goods{
+  	  		width: 208px;
+  	  		height: 126px;
+  	  	}
+  	  	
+  	  	.productPrice em {
+		    float: left;
+		    font-family: arial;
+		    font-weight: 400;
+		    font-size: 20px;
+		    color: #ff0036;
+		}
+/*=====================================================*/	
+
+.form-control{
+	margin: 11px;
+}
+
+.carousel{
+	width: 60%;
+	margin: auto;
+}
+.item img{
+	width: 700px;
+	height: 300px;
+}
+.tab-content table img {
+	width: 200px;
+	height: 200px;
+}
+.tab-content td {
+	padding-bottom: 24px;
+	padding-right: 20px;
+	text-align: center;
+}
+.media-left img {
+	margin: 10px;
+	padding: 20px;
+	width: 300px;
+	height: 300px;
+	border-radius:50%
+}

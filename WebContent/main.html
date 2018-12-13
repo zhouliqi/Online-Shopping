@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>网上购物系统</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- main界面的css样式 -->
+    <link href="../css/main.css" rel="stylesheet">
+	
+	<!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+	
+  </head>
+  
+  <body>
+  
+  <!--顶层的导航条-->
+	<div>
+  	  <h2>Online Shopping</h2>
+	</div>
+	<div class="nav">
+		<ul class="nav nav-pills navbar-nav">
+			<li role="presentation"><a href="#">登录</a></li>
+			<li role="presentation"><a href="#">注册</a></li>
+		</ul>
+		<form class="navbar-form navbar-left">
+        	<div class="form-group">
+          		<input type="text" class="form-control" placeholder="">
+        	</div>
+        	<button type="submit" class="btn btn-default">搜索</button>
+        </form>
+      
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>购物车</a></li>
+        </ul>
+	</div>
+	
+	
+	
+	
+	
+	
+	<!-- 
+	<div align="center">
+		<form class="navbar-form" role="search">
+			<div class="form-group">
+				<nav class="navbar-nav">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#"> <img alt="Brand" src="...">
+							</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<input type="text" class="form-control" placeholder="Search">
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+	
+	 -->
+	
+    <!-- 
+		顶部
+	-->
+	<!-- 
+	<div class="container">
+	
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <label class="navigation">欢迎来网上购物</label>
+				<a href="login.html" class="navigation"> 登陆</a>
+				<a href="register.html" class="navigation"> 注册</a>
+				<a class="navigation-right" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>购物车</a>
+	 -->
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<!-- <div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<p class="font">欢迎来网上购物</p>
+					<ul class="nav navbar-nav">
+						<li><a href="#">登录</a>
+						</li>
+						<li><a href="#">注册</a>
+						</li>
+						<li>
+						  
+						  <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span data-feather="shopping-cart">购物车</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>-->
+	
+	
+	
+	<!--
+	中部,用轮播图
+	 -->
+	
+	<!-- 
+			轮播图
+		 -->
+	<div id="banner">
+		<div id="carousel-example-generic" class="carousel slide"
+			data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<a href="#">
+					<img src="../images/1111.jpg" alt="...">
+					</a>
+				</div>
+				<div class="item">
+					<img src="../images/1112.jpg" alt="...">
+					
+				</div>
+				<div class="item">
+					<img src="../images/1113.jpg" alt="...">
+				</div>
+				<div class="item">
+					<img src="../images/1114.jpg" alt="...">
+				</div>
+				<div class="item">
+					<img src="../images/1115.jpg" alt="...">
+				</div>
+				
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic"
+				role="button" data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span> </a> <a
+				class="right carousel-control" href="#carousel-example-generic"
+				role="button" data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span> </a>
+		</div>
+
+	</div>
+
+
+
+
+	<!-- 
+		商品列表
+	-->
+	 <div class="shop">
+	 	<ul>
+	 		<li class="li-hover">
+	 			<a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.41.28ff3a36sI7AmB&id=10000464389&skuId=3641374221145&user_id=352469034&cat_id=2&is_b=1&rn=a8bc2e569c0e6e92b9cb4bb2aa0d76ce" target="_blank">
+					<img src="../images/1111.jpg" alt="" width="210" height="220" class="products_image"/>
+				</a>
+				<div class="goods">
+				<p class="s-price">190 ￥ </p>
+				<p class="s-title"> 迪卡侬 官方户外冲锋上衣男薄款 运动外套防水秋单层登山服 QUMH </p>
+				<a href="#" class="s-pay"> 微信扫一扫支付</a>
+				<input type="button" value="添加到购物车" onclick="add(this)" />
+				</div>
+			</li>
+			<li class="li-hover">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.149.28ff3a36y6Ant7&id=554865628191&skuId=3823504942776&user_id=1721385427&cat_id=2&is_b=1&rn=a8bc2e569c0e6e92b9cb4bb2aa0d76ce" target="_blank">
+					<img src="../images/1112.jpg" alt="" width="210" height="220" class="products_image"/>
+				</a>
+				<div class="goods">
+				<p class="s-price">590 ￥ </p>
+				<p class="s-title"> 伯希和户外冲锋衣 男女三合一防风防水外套潮牌加绒加厚登山服  </p>
+				<a href="#" class="s-pay"> 微信扫一扫支付</a>
+				<input type="button" value="添加到购物车" onclick="add(this)" />
+				</div>
+			</li>
+			
+	 		<li class="li-hover">
+	 			<a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.12f11e99vOq7UO&id=40914164310&skuId=3802488325767&user_id=1113314630&cat_id=2&is_b=1&rn=400edb2f61f60ee4bd209629953ab068" target="_blank">
+					<img src="../images/1113.jpg" alt="" width="210" height="220" class="products_image"/>
+				</a>
+				<div class="goods">
+				<p class="s-price">439 ￥ </p>
+				<p class="s-title"> Converse匡威帆布鞋女鞋高帮经典款男鞋学生运动情侣休闲鞋101010 </p>
+				<a href="#" class="s-pay"> 微信扫一扫支付</a>
+				<input type="button" value="添加到购物车" onclick="add(this)" />
+				</div>
+	 		</li>
+	 		
+	 		<li class="li-hover">
+	 			<a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.11.3d7b79f69HPJ0O&id=577084336527&skuId=3979085283457&user_id=1917047079&cat_id=2&is_b=1&rn=23b9a48383390dbca8b58a15ebc69be5" target="_blank">
+					<img src="../images/1114.jpg" alt="" width="210" height="220" class="products_image"/>
+				</a>
+				<div class="goods">
+				<p class="s-price">10999￥ </p>
+				<p class="s-title"> Apple/苹果 iPhone XS Max </p>
+				<a href="#" class="s-pay"> 微信扫一扫支付</a>
+				<input type="button" value="添加到购物车" onclick="add(this)" />
+				</div>
+	 		</li>
+	 		
+	 		<li class="li-hover">
+	 			<a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.20c174223XJmaI&id=524859421424&skuId=3897315468266&user_id=619123122&cat_id=2&is_b=1&rn=8c7f02c1b9d10617490d66b81590aef8" target="_blank">
+					<img src="../images/1115.jpg" alt="" width="210" height="220" class="products_image"/>
+				</a>
+				<div class="goods">
+				<p class="s-price">64.9￥ </p>
+				<p class="s-title"> 良品铺子零食大礼包网红小吃一箱组合<a href="https://liangpinpuzi.tmall.com/search.htm?spm=a220m.1000858.1000725.3.20c174226FkL4y&user_number_id=619123122&rn=8c7f02c1b9d10617490d66b81590aef8&keyword=%C1%BC%C6%B7%C6%CC%D7%D3" target="_blank">
+				良品铺子旗舰店 </a></p>
+				
+				<a href="#" class="s-pay"> 微信扫一扫支付</a>
+				<input type="button" value="添加到购物车" onclick="add(this)" />
+				</div>
+	 		</li>
+	 		
+	 		<li class="li-hover">
+	 			<a href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.6.20c174223XJmaI&id=40101725932&skuId=4072284626559&user_id=619123122&cat_id=2&is_b=1&rn=8c7f02c1b9d10617490d66b81590aef8" target="_blank">
+					<img src="../images/1116.jpg" alt="" width="210" height="220" class="products_image"/>
+				</a>
+				<div class="goods">
+				<p class="s-price">19.9￥ </p>
+				<p class="s-title"> 【良品铺子猪肉脯200g】肉类零食小吃<br><a href="https://liangpinpuzi.tmall.com/search.htm?spm=a220m.1000858.1000725.3.20c174226FkL4y&user_number_id=619123122&rn=8c7f02c1b9d10617490d66b81590aef8&keyword=%C1%BC%C6%B7%C6%CC%D7%D3" target="_blank">
+				良品铺子旗舰店 </a></p>
+				
+				<a href="#" class="s-pay"> 微信扫一扫支付</a>
+				<input type="button" value="添加到购物车" onclick="add(this)" />
+				</div>
+	 		</li>
+	 		
+	 	</ul>
+		
+
+	</div>
+	 
+	 
+  </body>
+</html>
