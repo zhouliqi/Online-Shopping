@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*输入框聚焦效果*/
+input:focus{
+    border-style:solid;
+    border-color: #03a9f4;
+	box-shadow: 0 0 15px #03a9f4;
+}
+
+/*顶部*/
+.TopNav {
+    min-height: 40px;
+    box-shadow: 0 0 3px #aaa;
+    border-bottom: 1px solid #e1e8ed;
+    border-bottom: 0 solid rgba(0,0,0,0.25);
+    color: #66757f;
+    font-size: 14px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding: 0 12px;
+}
+
+.TopNav--container {
+    max-width: 590px;
+    margin: 0 auto;
+    position: relative;
+    top: 6px;
+    font-size: 18px;
+}
+.TopNav--container span {
+	margin-top: 10px;
+}
+
+/*中部功能*/
+.PageContainer {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: white;
+    max-width: 590px;
+    margin: 10px auto 20px;
+}
+
+.Section {
+    padding: 36px 0;
+}
+
+.PageHeader {
+    font-size: 28px;
+    font-weight: 200;
+    color: #66757f;
+    margin-bottom: 36px;
+}
+
+.Edge {
+    font-weight: bold;
+    color: #14171a;
+}
+
+.Form-textbox {
+    width: 300px;
+    padding: 7px 7px 5px;
+    border-radius: 3px;
+    line-height: 20px;
+    border: 1px solid #ccd6dd;
+    outline: 0;
+    font-size: 14px;
+    margin: 5px 10px 5px 0;
+}
+.Edge-textbox {
+    border-radius: 18px;
+    padding: 7px 15px 5px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin-top: 25px;
+}
+.EdgeButton{
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+}
+.EdgeButton:hover {
+    text-decoration: none;
+}
+
+.EdgeButton--primary {
+    background-color: #1da1f2;
+    border: 1px solid #1da1f2;
+    border-top-color: rgb(29, 161, 242);
+    border-right-color: rgb(29, 161, 242);
+    border-bottom-color: rgb(29, 161, 242);
+    border-left-color: rgb(29, 161, 242);
+    color: #fff;
+}
+
+.EdgeButton--primary:hover {
+    background-color: #006dbf;
+    border-color: #006dbf;
+    color: #fff;
+}
+
+
+

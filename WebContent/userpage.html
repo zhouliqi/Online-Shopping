@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>用户界面</title>
+	
+	<!-- font-awesome图标 -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	<!-- Bootstrap样式 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    
+    <!-- 用户界面的css文件  -->
+    <link href="css/userpage.css" rel="stylesheet">
+    
+    <!-- js文件 -->
+    <script src="ajax/userpage.js"></script>
+</head>
+
+<body>
+	
+	<!-- 顶部 -->
+	<div class="topbar">
+		<div class="global-nav">
+			<div class="global-nav-inner">
+				<div class="container">
+					<h1 id="brand"><span><i class="fa fa-shopping-bag"></i></span></h1>
+					<div class="pushstate-spinner"></div>
+					<div role="navigation" style="display: inline-block;">
+						<ul class="nav" id="global-actions">
+							<li><a href="debug.html"><i class="fa fa-home" aria-hidden="true"></i><span>&nbsp;首页</span></a></li>
+							<li><a href="#" id="logout"><i class="fa fa-sign-out fa-fw"></i><span>&nbsp;退出登录</span></a></li>
+						</ul>
+					</div>
+					<div class="pull-right">
+						<form class="form-search">
+							<input type="text" class="search-input" placeholder="搜索商品">
+						</form>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+	<!-- main -->
+	<div class="page-outer">
+		<div class="AppContent wrapper" >
+			<!-- 左边div -->
+			<div class="dashboard">
+			
+				<!-- 左上角div -->
+				<div class="DashboardProfileCard DashboardProfileCard--withoutStats module">
+					<a class="DashboardProfileCard-bg u-bgUserColor u-block"></a>
+				</div>
+				<div class="DashboardProfileCard-userFields">
+					<div class="DashboardProfileCard-name u-textTruncate">
+						<span id="info">小周</span>
+						<span class="username">@zhou_liqi</span>
+					</div>
+				</div>
+				
+				<!-- 左下div -->
+				<div id="choose">
+					<ul>
+						<li id="list-1"><a class="list-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>&nbsp; 我的账户</a></li>
+						<li id="list-2"><a class="list-link" href="#"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp; 我的订单</a></li>
+						<li id="list-3"><a class="list-link" href="#"><i class="fa fa-gear" aria-hidden="true"></i>&nbsp; 密码管理</a></li>
+						<li id="list-4"><a class="list-link" href="#"><i class="fa fa-address-book" aria-hidden="true"></i>&nbsp; 地址设置</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 右边div -->
+			
+<!-- ============================================================================================================================= -->			
+			<!-- 
+			我的账户的div 
+			初始时设置为hidden,点击左边的我的账户时显示它
+			-->
+			<div class="content-main" id="account">
+				<div class="content-header">
+					<div class="header-inner">
+						<h2>账户</h2>
+					</div>
+					
+					<div class="content-inner no-stream-end">
+						<div class="t1-form">
+							
+							<div class="control-group">
+								<p class="subheader">亲爱的小周，填写真实的资料，有助于好友找到你哦。</p>
+							</div>
+						
+							<div class="control-group">
+								<label class="t1-label control-label">昵称：</label>
+								<div class="controls">
+									<input type="text" id="nickname">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="t1-label control-label">真实姓名：</label>
+								<div class="controls">
+									<input type="text" id="realname">
+								</div>
+							</div>
+							
+							<div class="control-group hidden">
+								<label class="t1-label control-label">性别：</label>
+							</div>
+							
+														
+							<!-- 用户修改信息成功时显示提示信息 -->
+							<div class="alert alert-success" role="alert" style="display: none;" id="tips">
+							  <strong>修改成功</strong>
+							</div>
+							
+							<div class="form-actions">
+								<button class="EdgeButton EdgeButton--primary EdgeButton--medium" id="account_save">保存修改</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 
+			修改密码的div 
+			初始时设置为hidden,点击左边的密码管理时显示它
+			-->
+			<div class="content-main hidden" id="pwd">
+				<div class="content-header">
+					<div class="header-inner">
+						<h2>密码管理</h2>
+						<p class="subheader">修改你的密码</p>				
+					</div>
+					<div class="content-inner no-stream-end">
+						<div class="t1-form">
+							<div class="control-group">
+								<label class="t1-label control-label">当前密码</label>
+								<div class="controls">
+									<input type="password" id="current_password">
+									<p class="t1-infotext"><a href="reset.html">忘记密码?</a></p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="t1-label control-label">新密码</label>
+								<div class="controls">
+									<input type="password" id="new_password">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="t1-label control-label">确认密码</label>
+								<div class="controls">
+									<input type="password" id="ensure_password">
+								</div>
+							</div>
+
+							<hr>
+							<div class="form-actions">
+								<button class="EdgeButton EdgeButton--primary EdgeButton--medium" id="password_save">保存修改</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+
+<!-- ============================================================================================================================= -->
+
+		</div>
+	</div>
+
+	<!-- 
+	提示信息的模态框
+	只需要在jquery代码中调用modal()函数就可以显示模态框
+	-->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="model-title">提示</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<span id="myModalLabel"></span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

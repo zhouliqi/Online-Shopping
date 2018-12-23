@@ -16,8 +16,8 @@ import entity.User;
  */
 public class RegisterDao {
 	public boolean verify(User user) {
+
 		Connection conn = null;
-		
 		conn = Database.getConnection();
 		// 找到这一条记录
 		String sql = "select * from user where username=?";
@@ -25,7 +25,7 @@ public class RegisterDao {
 		ResultSet rs = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user.getUser());
+			pstmt.setString(1, user.getUserName());
 			rs = pstmt.executeQuery();
 			if (rs.next() == false) { // 如果当前注册的用户名还没有被注册，则返回true，验证通过
 				return true;
@@ -47,20 +47,23 @@ public class RegisterDao {
 	 * @param u
 	 * @return
 	 */
-	public boolean addUser(User u) {
+	public boolean addUser(User user) {
+		if ("".equals(user.getUserName()) || "".equals(user.getName()) || "".equals(user.getPassword())) {
+			return false;
+		}
 		Connection conn = Database.getConnection();
-		boolean flag = false;
+		int flag = 0;
 		// 找到这一条记录
 		String sql = "insert into user(username, name, password, phone, address) values(?, ?, ?, ?, ?)";
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, u.getUser());
-			pstmt.setString(2, u.getName());
-			pstmt.setString(3, u.getPassword());
-			pstmt.setString(4, u.getPhone());
-			pstmt.setString(5, u.getAddress());
-			flag = pstmt.execute();
+			pstmt.setString(1, user.getUserName());
+			pstmt.setString(2, user.getName());
+			pstmt.setString(3, user.getPassword());
+			pstmt.setString(4, user.getPhone());
+			pstmt.setString(5, user.getAddress());
+			flag = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,6 +71,10 @@ public class RegisterDao {
 			// 关闭数据库的资源
 			Database.close(pstmt, conn);
 		}
-		return flag;
+		if(flag != 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

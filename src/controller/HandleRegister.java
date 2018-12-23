@@ -30,19 +30,16 @@ public class HandleRegister extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		//response.setContentType("application/x-json;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-	
 		PrintWriter out = response.getWriter();
 		
-		out.println("Welcome");
-		
-		String user = ""; 		
+		String userName = ""; 		
 		String name = "";		
 		String password = "";	
 		String checkPassword = "";
 		String phone = "";		
 		String address = "";
 		
-		user = request.getParameter("user");
+		userName = request.getParameter("userName");
 		name = request.getParameter("name");
 		password = request.getParameter("password");
 		checkPassword = request.getParameter("checkPassword");
@@ -51,7 +48,7 @@ public class HandleRegister extends HttpServlet {
 		
 		User u = new User();
 		
-		u.setUser(user);
+		u.setUserName(userName);
 		u.setName(name);
 		u.setPassword(password);
 		u.setPhone(phone);
@@ -69,18 +66,14 @@ public class HandleRegister extends HttpServlet {
 			out.write(str);
 			//String str = "{\"username\":\"learning\", \"password\": \"123\"}";
 			//out.print("{\"success\": \"false\", \"message\": \"该用户已存在\"}");
-			
 		} else {
 			// 检查输入的密码是否一致
-			if (!checkPassword.equals(password)) { // 如果前后输入的密码不一致，则显示提示信息
+			if (!checkPassword.equals(password) || (password.length() < 6)) { // 如果前后输入的密码不一致，则显示提示信息
 				JSONObject json = new JSONObject();
 				json.put("success", "false");
 				json.put("message", "您输入的密码不一致");
 				String str = json.toString();
 				out.write(str);
-				
-				//System.out.println("您的密码不一致\n");
-				//out.write("{\"success\": \"false\", \"message\": \"您输入的密码不一致\"}");
 			} else {
 				// 匹配手机号码是否是11位数字
 				String regex = "[\\d]{11}";
@@ -90,15 +83,20 @@ public class HandleRegister extends HttpServlet {
 					json.put("message", "请正确填写11位手机号码");
 					String str = json.toString();
 					out.write(str);
-					//System.out.println("手机号码不正确\n");
-					//out.write("{\"success\": \"false\", \"message\": \"请正确填写11位手机号码\"}");
 				} else {
-					JSONObject json = new JSONObject();
-					json.put("success", "true");
-					String str = json.toString();
-					out.write(str);
-					//System.out.println("成功注册\n");
-					//out.write("{\"success\": \"true\"}");
+					flag = dao.addUser(u);
+					if (flag) {// 如果信息填写正确无误,则注册成功
+						JSONObject json = new JSONObject();
+						json.put("success", "true");
+						String str = json.toString();
+						out.write(str);
+					} else {
+						JSONObject json = new JSONObject();
+						json.put("success", "false");
+						json.put("message", "注册失败");
+						String str = json.toString();
+						out.write(str);
+					}
 				}
 			}
 			

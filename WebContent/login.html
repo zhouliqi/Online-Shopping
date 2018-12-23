@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>登录</title>
+    <title>With you-欢迎登录</title>
 	
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!-- font-awesome图标 -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     
-    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
-	<!-- 登陆界面的css样式 -->
-    <link href="../css/signin.css" rel="stylesheet">
-	
 	<!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
@@ -18,41 +17,81 @@
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     
-    
-    <style type="text/css">
-    	p{
-    		margin: 35px 0 10px;
-    	}
-    	.form-control {
-    		width: 25%;
-    		margin: 15px auto 0 auto;
-    	}
-    </style>
+    <!-- 登陆界面的css样式 -->
+    <link href="css/signin.css" rel="stylesheet">
+    <script src="ajax/login.js"></script>
     
   </head>
   
   <body class="text-center">
-  	<div class="container">
-    <form class="form-signin" action="#" method="post">
-
-      <h1 class="h3 mb-3 font-weight-normal">用户登录</h1>
+    <div class="form-signin">
+      <p class="h3 mb-3 font-weight-normal title">用户登录</p>
       
-      	<label for="inputEmail" class="sr-only">User</label>
-      	<input type="email" id="userName" class="form-control" placeholder="用户名" required autofocus>
+      <label for="inputUser" class="sr-only">User</label>
+      <input type="text" id="userName" class="form-control shape" placeholder="用户名" required autofocus>
       
-      	<label for="inputPassword" class="sr-only">Password</label>
-      	<input type="password" id="password" class="form-control" placeholder="Password" required>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control input-3 input-4" placeholder="密码" required>
       
+      <!--
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
+      -->
       
-      <button type="button" class="btn btn-success">登录</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
-    </form>
-    
+      <button class="btn btn-lg btn-primary" type="submit" id="login">登录</button>
+      
+      <div class="rn">
+        <a href="reset.html">忘记密码?</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="register.html">现在注册»</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="debug.html">返回主页!</a>
+      </div>
+      <!--
+      <div class="alert alert-info" role="alert">
+        	首次使用With you吗? <a href="register.html">&nbsp;&nbsp;现在注册»</a>
+      </div>
+      -->
+      
+      <!-- 
+      	引用图标
+      -->
+      <div id="site-social-icons">
+        <a class="social-icon" href="https://github.com/zhouliqi"><i class="fa-github fa"></i></a>
+        <a class="social-icon" href="https://weibo.com/2625731577/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1"><i class="fa-weibo fa"></i></a>
+      	<a class="social-icon" href="https://twitter.com/ML_zhouliqi"><i class="fa-twitter fa"></i></a>
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018 With You</p>
     </div>
-  </body>
+
+	<!-- 
+	当用户名和密码有误是提示信息 
+	只需要在jquery代码中调用modal()函数就可以显示模态框
+	-->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="model-title">提示</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<span id="myModalLabel"></span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
 </html>

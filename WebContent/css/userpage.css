@@ -1,0 +1,432 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+body {
+    background: #e6ecf0;
+    color: #14171a;
+    font-size: 14px;
+    line-height: 20px;
+    overflow-y: scroll;
+    position: relative;
+	margin: 0;
+}
+h2 {
+	font-size: 22px;
+    line-height: 22px;
+}
+
+div {
+	display: block;
+}
+a:hover {
+	color: #ff0000;
+	text-decoration: none;
+}
+input:focus{
+	box-shadow: 0px 0.2em 2.5em #03a9f4;
+}
+/*顶部导航条样式*/
+.topbar {
+    backface-visibility: hidden;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+.global-nav {
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    height: 46px;
+    position: relative;
+    width: 100%;
+}
+.global-nav-inner {
+    background: #fff;
+    height: 46px;
+}
+.global-nav .container {
+	padding: 0px;
+	min-width: 590px;
+	witdth: auto;
+	height: 100%;
+    max-width: 890px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+}
+#brand {
+	color: #1da1f2;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 100px;
+    display: inline-block;
+    transition: all .25s ease-in-out;
+    font-weight: bold;
+}
+.pushstate-spinner {
+    display: none;
+    height: 26px;
+    margin: 11px 0 0 -26px;
+    vertical-align: top;
+    width: 26px;
+}
+a span {
+	font-size: 14px;
+}
+.global-nav [role=navigation], .nav, .nav>li {
+    float: left;
+}
+ol, ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+.nav {
+	text-align: center;
+	margin-left: -130px;
+}
+.nav>li {
+    color: #66757f;
+}
+.nav li {
+    position: relative;
+}
+li {
+    text-align: inherit;
+    margin-right: 10px;
+}
+#global-actions>li {
+    height: 46px;
+    overflow: hidden;
+}
+#global-actions > li > a {
+    border-bottom-color: #1DA1F2;
+    border-bottom: 2px solid #1c94e0;
+}
+
+.nav>li>a {
+    color: inherit;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	height: 46px;
+	line-height: 1;
+	padding: 10px 5px 0px 5px;
+}
+
+.pull-right {
+    float: right;
+    text-align: left;
+}
+.global-nav .form-search {
+    float: left;
+    height: 33px;
+    margin: 7px 15px 0 0;
+    font-size: 12px;
+    width: 221px;
+    position: relative;
+    display: block;
+}
+.global-nav .search-input {
+    background-color: #f5f8fa;
+    border-radius: 21px;
+    border: 1px solid #e6ecf0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #14171a;
+    display: block;
+    font-size: 12px;
+    height: 32px;
+    line-height: 16px;
+    padding: 8px 32px 8px 12px;
+    transition: all .2s ease-in-out;
+    width: 100%;
+}
+
+/*中部*/
+
+/*左边的div*/
+#page-outer {
+	height: 100%;
+}
+
+.AppContent {
+    padding: 56px 14px 15px;
+    position: relative;
+}
+.wrapper{
+    margin: 0 auto;
+    min-height: 0;
+    padding: 56px 23px 15px;
+    position: relative;
+    width: 890px;
+}
+.dashboard {
+    float: left;
+    width: 290px;
+    height: 1;
+    margin-left: -175px;
+}
+.DashboardProfileCard--withoutStats {
+    padding-bottom: 10px;
+}
+.module {
+    background-clip: padding-box;
+    border: 0;
+    position: relative;
+    margin-bottom: 10px;
+    height: 155px;
+}
+.DashboardProfileCard {
+    border: 1px solid #e6ecf0;
+    background: #fff;
+}
+
+.DashboardProfileCard-bg {
+    background-image: url(../images/bg.jpg);
+}
+.DashboardProfileCard-bg {
+    background-size: 100%;
+    height: 95px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background-position: 0 50%;
+    width: 100%;
+    padding: 0;
+    margin-top: -1px;
+}
+.u-block {
+    display: block!important;
+}
+.DashboardProfileCard-userFields {
+    position: absolute;
+    top: 103px;
+    left: 90px;
+    width: 185px;
+}
+.DashboardProfileCard-name {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 65px 0 -2px -160px;
+}
+.u-textTruncate {
+    max-width: 100%;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+    white-space: nowrap!important;
+    word-wrap: normal!important;
+}
+.username {
+    font-size: 14px;
+    color: #657786;
+}
+
+/*左下的样式*/
+
+#choose {
+	background-clip: padding-box;
+    border: 0;
+    position: relative;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 155px;
+    float: left;
+    margin: 5px 0 0 0;
+}
+#choose .list-link {
+	border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border-top: 1px solid #e6ecf0;
+    position: relative;
+    display: block;
+    padding: 8px 12px;
+    background-color: #fff;
+    color: #66757f;
+    border: 1px solid #e6ecf0;
+    border-top: 0;
+}
+
+
+/*右边的样式*/
+/*==========================================*/
+/*隐藏div*/
+.hidden {
+    display: none;
+}
+
+body .content-main {
+    float: left;
+    margin: 0 15px;
+    width: 590px;
+}
+.content-header {
+    border: 1px solid #e6ecf0;
+    border-bottom-width: 0;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background-clip: padding-box;
+}
+.content-header .header-inner {
+    min-height: 20px;
+    padding: 12px;
+    background-color: #fff;
+    border-bottom: 2px solid #e6ecf0;
+    border-radius: 0;
+    margin: 0px 1px 0px 1px;
+}
+
+.header-inner h2 {
+    color: #14171a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.subheader {
+    color: #657786;
+    margin-top: 3px;
+}
+.content-inner {
+    padding: 12px;
+    background-color: #fff;
+    border-left: 1px solid #e6ecf0;
+    border-right: 1px solid #e6ecf0;
+    background-clip: padding-box;
+}
+
+.no-stream-end {
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e6ecf0;
+    border-radius: 0;
+}
+
+.t1-form {
+    margin-bottom: 0;
+}
+.control-group {
+    margin-bottom: 15px;
+}
+.control-label {
+    float: left;
+    width: 120px;
+    padding-top: 5px;
+    text-align: right;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    border-bottom: 0;
+    display: block;
+    color: #14171a;
+    cursor: pointer;
+}
+.t1-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #14171a;
+    cursor: pointer;
+}
+.control-group .controls {
+    margin-left: 140px;
+}
+
+.content-main input {
+    display: inline-block;
+    width: 210px;
+    padding: 4px;
+    margin: 0;
+    outline: 0;
+    background-color: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.t1-infotext {
+    font-size: 12px;
+    color: #657786;
+    padding-right: 12px;
+}
+.controls p {
+	margin: 0;
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+}
+hr {
+	box-sizing: content-box;
+	display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+}
+
+div .form-actions {
+    padding-left: 140px;
+    margin: 20px 0 8px;
+}
+
+button {
+	align-items: flex-start;
+	box-sizing: border-box;
+	text-indent: 0px;
+    text-shadow: none;
+	text-rendering: auto;
+	letter-spacing: normal;
+    word-spacing: normal;
+    font: inherit;
+    margin: 0;
+    overflow: visible;
+}
+button, select {
+	background: transparent;
+    text-transform: none;
+}
+
+.EdgeButton, .EdgeButton:visited {
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.EdgeButton--medium {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 16px;
+}
+
+.EdgeButton--primary {
+    background-color: #1da1f2;
+    border: 1px solid #1da1f2;
+    color: #fff;
+}
+
+.EdgeButton--primary, .EdgeButton--primary:focus {
+    background-color: #4AB3F4;
+    border-color: transparent;
+}
+
+#settings_save {
+    display: inline;
+    margin-right: 20px;
+}
+.checkbox {
+	display: inline-block;
+}
+
+
+

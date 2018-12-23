@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>找回密码</title>
+	
+	<!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+	
+	<!-- font-awesome图标 -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css" >
+    
+    <script src="ajax/reset.js"></script>
+	
+</head>
+
+<body>
+	<div class="TopNav">
+		<div class="TopNav--container">
+		  <i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;<span>找回密码</span>
+		</div>
+	</div>
+	
+	<div class="PageContainer">
+	 	<div class="Section">
+	 		<div class="PageHeader Edge">找到你的 With you 账号</div>
+	 		<p>输入你的用户名和手机号码。</p>
+	 		<input class="Form-textbox Edge-textbox" type="text" value="" placeholder="用户名" autofocus id="userName" >
+	 		<input class="Form-textbox Edge-textbox" type="text" value="" placeholder="手机号码" autofocus id="phone" >
+	 		<input class="EdgeButton EdgeButton--primary" type="submit" value="搜索" id="reset">
+	 	</div>
+	</div>
+	
+	
+	
+	
+	<!-- 
+	当用户名和手机号码有误是提示信息 
+	只需要在jquery代码中调用modal()函数就可以显示模态框
+	-->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="model-title">提示</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<span id="myModalLabel"></span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

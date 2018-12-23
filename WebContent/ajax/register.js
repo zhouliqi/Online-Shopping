@@ -1,71 +1,72 @@
 /**
  * 如果注册的信息有误，则向span写入提示信息
  */
+
 $(document).ready(function(){
 	$("#register").click(function(){
-		var user = $("#user").val();
+		var userName = $("#userName").val();
 		var name = $("#name").val();
 		var password = $("#password").val();
 		var checkPassword = $("#checkPassword").val();
 		var phone = $("#phone").val();
 		var address = $("#address").val();
 		
-		//var url = "localhost:9999/Shopping/register";
-		$.ajax({
-			url: "/Shopping/register",
-			type: "POST",
-			data: {"user": user, "name": name, "password": password, "checkPassword": checkPassword, "phone": phone, "address": address},
-			dataType: "text",
-			
-			success: function(result) {
-				
-				//alert(result)
-				var data = result.replace("Welcome", "");
-				data = data.toString();
-				var obj = $.parseJSON(data);
-				//alert(obj.message);
-				
-				/*
-			    var obj = $.parseJSON(result);
-			    console.log(obj);
-			    alert(obj);*/
-				
-				if (obj.success == "true") {
-					window.location.href = "/Shopping/login.html";
-				} else if (obj.success == "false") {
-					if ($("#tips").css("display") == "none" ) {
-						$("#tips").show();
+		if (userName == "" || name == "" || password == "" || address == "") {
+			$("#myModalLabel").text("你的信息还未填写完整");
+			$('#myModal').modal();
+		} else {
+			$.ajax({
+				url: "/Shopping/register",
+				type: "POST",
+				data: {"userName": userName, "name": name, "password": password, "checkPassword": checkPassword, "phone": phone, "address": address},
+				dataType: "text",
+				success: function(result) {
+					var obj = $.parseJSON(result.toString());
+					if (obj.success == "true") {
+						window.location.href = "/Shopping/login.html";
+					} else if (obj.success == "false") {
+						if ($("#tips").css("display") == "none" ) {
+							$("#tips").show();
+						}
+						$("#massage").text(obj.message); // 写入出错信息
+						// 提示信息出现五秒后消失
+						setTimeout(function(){ $("#tips").css("display", "none"); }, 5000);
+					} else {
+						alert("error");
 					}
-					$("#massage").text(obj.message);
-				} else {
-					alert("No");
+				},
+				error: function (XMLHttpRequest, textStatus, errorThrown) {     
+					alert(errorThrown);
 				}
-			},
-			/*error: function() {
-				alert(arguments[1]);
-			}*/
-			error: function (XMLHttpRequest, textStatus, errorThrown) {     
-				alert(errorThrown);
-			}
-		});
-		//window.location.href = "/Shopping/login.html";
-		/*if ($("#tips").css("display") == "none" ) {
-			$("#tips").show();
+			});
 		}
-		$("#tips").text(name+ " " + user + " 电话:" + phone);*/
 		
+	});
+	
+/**
+ * 提示信息
+ */
+	$("#password").blur(function(){
+		if ($("#password").val().length < 6) {
+			$("#myModalLabel").text("您输入的密码长度不足6位,请重新输入");
+			$('#myModal').modal();
+		}
 	});
 	
 	$("#phone").blur(function(){
 		var regex = /[\d]{11}/;
 		if (!regex.test($("#phone").val())) {
-			//alert("电话号码输入有误");
-			
-			//$('#phone').modal("电话号码输入有误");
-			$("#myModalLabel").text("您的号码输入有误");
+			$("#myModalLabel").text("请输入11位手机号码");
 			$('#myModal').modal();
 		}
 	});
-
+	
+	$("#address").blur(function(){
+		if (regex.test($("#address").val()) == "") {
+			$("#myModalLabel").text("请填写相应的地址");
+			$('#myModal').modal();
+		}
+	});
+	
 	
 });
